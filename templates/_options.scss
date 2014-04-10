@@ -6,13 +6,12 @@
 */
 
 /*  Global Colors  */
-$primary   : #FFFFFF;                                  
+$primary   : #0A0A0A;                                  
 $secondary : #272220;                                  
 $white     : #040004;
 $black     : #3A3A3A;
 $gray      : #A8A8A9;                                 
-$muted     : #333333;
-$red 	   : #FF0000;                                                     
+$muted     : #808080;                                                     
 
 /*  Link Colors  */
 $link    : green;                                    
@@ -149,13 +148,3 @@ $video-max-width  : 100%;
 
 /*  !Link fonts in for production!  */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
-@font-face {
-    font-family: Scriptina;
-    src: url(../assets/SCRIPTIN.ttf);
-    font-weight:400;
-}
-@font-face {
-    font-family: OldSansBlack;
-    src: url(../assets/OldSansBlack.ttf);
-    font-weight:400;
-}

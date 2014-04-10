@@ -1,7 +1,7 @@
 /*  Utility's */
 
 /*  Background */
-@mixin background($background-image){
+@mixin background($background-image: "../content/img/background/background0.png"){
   background: url($background-image) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -179,7 +179,7 @@ $text-shadow-default: 1px 1px rgba(236, 236, 236, 0.55);
 		text-shadow: $text-shadow-default;
 	}
 	@if $text-shadow == hammer-text-shadow {
-		text-shadow: 0 -1px 0px rgb(213, 213, 213);
+		text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.4);
 	}
 	@if $text-shadow == apple-text-shadow {
 		text-shadow: #fff 1px 1px;;

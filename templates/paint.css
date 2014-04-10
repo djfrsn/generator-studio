@@ -47,16 +47,6 @@ way we don't need to device test for those widths... */
 */
 /*  !Link fonts in for production!  */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
-@font-face {
-  font-family: Scriptina;
-  src: url(../assets/SCRIPTIN.ttf);
-  font-weight: 400; }
-
-@font-face {
-  font-family: OldSansBlack;
-  src: url(../assets/OldSansBlack.ttf);
-  font-weight: 400; }
-
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -456,6 +446,8 @@ source: http://css-tricks.com/dont-overthink-it-grids/ */
 /* Clearing Context 
 */
 
+.header, .text-content, .footer {
+  clear: both; }
 
 
 /* Gutters 
@@ -537,220 +529,65 @@ video {
 
 
 */
-/* Main 
-*/
-html, body {
-  background: url("../assets/background.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100%; }
-
-.canvas {
-  min-height: 100%; }
-
-#canvas__wrap {
-  overflow: auto;
-  min-height: 100%; }
-
-/* must be same height as the footer */
-.hide {
-  display: none; }
-
-/*Opera Fix*/
-body:before {
-  content: "";
-  height: 100%;
-  float: left;
-  width: 0;
-  margin-top: -32767px; }
-
+/* @TODO learn how to use :after :before line-height */
 /* Canvas 
 */
+html, body {
+  height: 100%; }
+
 body {
   font-size: 62.5%;
   font-weight: normal;
   font-family: 'Ubuntu', sans-serif;
-  background-color: #FFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(''));
+  background-color: #FFFFFF;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to('$secondary'));
   /* Chrome, Safari 4+ */
-  background-image: -webkit-linear-gradient(top, #FFF, '');
+  background-image: -webkit-linear-gradient(top, #FFFFFF, '$secondary');
   /* Chrome 10-25, iOS 5+, Safari 5.1+ */
-  background-image: -moz-linear-gradient(top, #FFF, '');
+  background-image: -moz-linear-gradient(top, #FFFFFF, '$secondary');
   /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(top, #FFF, '');
+  background-image: -o-linear-gradient(top, #FFFFFF, '$secondary');
   /* Opera 11.10-12.00 */
-  background-image: linear-gradient(top bottom, #FFF, '');
+  background-image: linear-gradient(top bottom, #FFFFFF, '$secondary');
   /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
-  color: #272220;
-  text-shadow: 0px 1px 0px #e5e5ee; }
+  color: #0A0A0A; }
 
 .canvas {
   width: 100%;
   margin: 0;
   /* default = center 0 auto */ }
 
-/*  Canvas Wrap  
+/* OO Styles 
 */
-#canvas__wrap {
-  margin: 0px 5px; }
 
-/* Lootmob title & Shop
+/* Header 
 */
-.lootmob {
-  margin: 0.18em 0;
-  text-shadow: 0px 1px 0px #e5e5ee;
-  font-family: "OldSansBlack";
-  text-align: center; }
-
-.shop {
-  background: url("../assets/chest1.gif") no-repeat;
-  width: 58px;
-  height: 61px;
-  text-indent: -9999px;
-  margin: 200px auto 0; }
-
-.lootmob {
-  font-size: 160px;
-  font-size: 10rem; }
-
-.shop-link :hover {
-  color: #FF0000; }
-
-.shop-link :visited {
-  color: #333333; }
-
-/* Buy it now wrap
-*/
-.buyitnow__wrap {
-  margin: 0 auto 25px;
-  width: 450px;
-  height: 650px; }
-
-.buyitnow__title {
-  font-size: 52.8px;
-  font-size: 3.3rem;
-  margin: 0;
-  font-family: "Franchise"; }
-
-.buyitnow__sub-title {
-  font-size: 16px;
-  font-size: 1rem;
-  margin: 40px 0 15px; }
-
-.buyitnow__title, .buyitnow__sub-title {
-  text-align: center; }
-
-.lovehurtstee_img {
-  margin: 0 auto 10px;
-  background: url("../assets/lovehurtstee.jpg");
-  width: 450px;
-  height: 450px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  /* future proofing */
-  -khtml-border-radius: 4px;
-  /* for old Konqueror browsers */ }
-
-.lovehurtstee__altimg0, .lovehurtstee__altimg1, .lovehurtstee__altimg2, .lovehurtstee__altimg3 {
-  margin: 0 10px 17px 0; }
-
-.lovehurtstee__altimg0 {
-  float: left;
-  background: url("http://placehold.it/70x85");
-  width: 70px;
-  height: 85px; }
-
-.lovehurtstee__altimg1 {
-  float: left;
-  background: url("http://placehold.it/70x85");
-  width: 70px;
-  height: 85px; }
-
-.lovehurtstee__altimg2 {
-  float: left;
-  background: url("http://placehold.it/70x85");
-  width: 70px;
-  height: 85px; }
-
-.lovehurtstee__altimg3 {
-  float: left;
-  background: url("http://placehold.it/70x85");
-  width: 70px;
-  height: 85px; }
-
-.price__flag {
-  font-size: 48px;
-  font-size: 3rem;
-  margin: 26px 0 0 5px;
-  clear: both;
-  width: 100px; }
-
-.buyitnow__button {
-  margin: -15px 0 0 249px;
+.header__h1 {
   font-size: 32px;
   font-size: 2rem;
-  position: relative;
-  bottom: 42px; }
+  margin: 0 0 0 0; }
 
-.line {
-  border: none;
-  color: white;
-  width: 100%;
-  height: 1px;
-  background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 245, from(#000), to(#fff)); }
+.msg {
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin: 0 0 -0.25rem 0; }
 
-.line1 {
-  border: none;
-  color: white;
-  width: 100%;
-  height: 1px;
-  background: black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 235, from(#000), to(#fff)); }
-
-.line2 {
-  position: fixed;
-  bottom: 42px;
-  border: none;
-  color: white;
-  width: 100%;
-  height: 2px;
-  background: black; }
-
-/* Misc 
+/* Footer 
 */
-.floral {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 42px;
-  background: url("../assets/floral1.png");
-  margin: 0 !important; }
+.footer {
+  margin: 0; }
+
+.footer__bits {
+  color: #0A0A0A;
+  font-size: 8.8px;
+  font-size: 0.55rem; }
 
 /* Links 
 */
-.footer {
-  text-align: center;
-  margin: 0 0 75px; }
-
-.fa {
-  color: #272220;
-  margin: 0 0 25px; }
-
-.fa-envelope {
-  margin-left: 20px; }
-
-.copyright {
-  font-size: 13.6px;
-  font-size: 0.85rem; }
-
 a:hover {
   color: blue; }
 a:visited {
-  color: #333333; }
+  color: #808080; }
 
 a img {
   border: none;
@@ -762,142 +599,12 @@ a img {
     filter: alpha(opacity=80); }
 
 /* Water - Response System */
-@media only screen and (min-width: 960px) and (max-width: 1152px) {
-  .buyitnow__wrap {
-    margin: 0 auto 5px;
-    width: 450px;
-    height: 450px; }
-  .lootmob {
-    font-size: 88px;
-    font-size: 5.5rem; }
-  .shop {
-    font-size: 32px;
-    font-size: 2rem; }
-  .buyitnow__sub-title {
-    font-size: 16px;
-    font-size: 1rem;
-    margin: 20px 0 15px; }
-  .lovehurtstee_img {
-    margin: 0 auto 10px;
-    background: url("../assets/lovehurtstee_small.png");
-    width: 250px;
-    height: 250px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    /* future proofing */
-    -khtml-border-radius: 4px;
-    /* for old Konqueror browsers */ }
-  .price__flag {
-    font-size: 32px;
-    font-size: 2rem;
-    margin: 30px 0 0 75px;
-    clear: both;
-    width: 100px; }
-  .buyitnow__button {
-    margin: -15px 0 6px 249px;
-    font-size: 32px;
-    font-size: 2rem;
-    position: relative;
-    bottom: 22px;
-    width: 100px; }
-  .line {
-    border: none;
-    color: white;
-    width: 100%;
-    height: 1px;
-    background: black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
-  .line1 {
-    border: none;
-    color: white;
-    width: 100%;
-    height: 1px;
-    background: black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
-  .line2 {
-    position: fixed;
-    bottom: 42px;
-    border: none;
-    color: white;
-    width: 100%;
-    height: 2px;
-    background: black; } }
-
-@media only screen and (min-width: 1153px) and (max-width: 1440px) {
-  .buyitnow__wrap {
-    margin: 0 auto 5px;
-    width: 450px;
-    height: 450px; }
-  .lootmob {
-    font-size: 120px;
-    font-size: 7.5rem; }
-  .shop {
-    font-size: 48px;
-    font-size: 3rem; }
-  .buyitnow__sub-title {
-    font-size: 16px;
-    font-size: 1rem;
-    margin: 20px 0 20px; }
-  .lovehurtstee_img {
-    margin: 0 auto 10px;
-    background: url("../assets/lovehurtstee_small.png");
-    width: 250px;
-    height: 250px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    /* future proofing */
-    -khtml-border-radius: 4px;
-    /* for old Konqueror browsers */ }
-  .price__flag {
-    font-size: 32px;
-    font-size: 2rem;
-    margin: 30px 0 0 75px;
-    clear: both;
-    width: 100px; }
-  .buyitnow__button {
-    margin: -15px 0 6px 249px;
-    font-size: 32px;
-    font-size: 2rem;
-    position: relative;
-    bottom: 22px;
-    width: 100px; }
-  .line {
-    border: none;
-    color: white;
-    width: 100%;
-    height: 1px;
-    background: black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
-  .line1 {
-    border: none;
-    color: white;
-    width: 100%;
-    height: 1px;
-    background: black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
-  .line2 {
-    position: fixed;
-    bottom: 42px;
-    border: none;
-    color: white;
-    width: 100%;
-    height: 2px;
-    background: black; }
-  .lovehurtstee_img {
-    margin: 0 auto -1px;
-    background: url("../assets/lovehurtstee_small.png");
-    width: 250px;
-    height: 250px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    /* future proofing */
-    -khtml-border-radius: 4px;
-    /* for old Konqueror browsers */ } }
-
 /* Base 
 
 
 */
+@media print {
+  a[href]:after {
+    content: " (" attr(href) ") "; } }
+
+/* Show URL's of links in printed web pages */

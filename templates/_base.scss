@@ -2,3 +2,8 @@
 
 
 */
+@media print {
+  a[href]:after {
+    content: " (" attr(href) ") ";
+  }
+}/* Show URL's of links in printed web pages */
