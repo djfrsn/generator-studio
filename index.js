@@ -51,7 +51,10 @@ var StudioGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+    this.copy('README.md', 'README.md');
+
     this.copy('index.html', 'project/index.html');
+
     this.copy('_base.scss', 'project/scss/_base.scss');
     this.copy('_buttons.scss', 'project/scss/_buttons.scss');
     this.copy('_canvas.scss', 'project/scss/_canvas.scss');
@@ -61,6 +64,8 @@ var StudioGenerator = yeoman.generators.Base.extend({
     this.copy('_utility.scss', 'project/scss/_utility.scss');
     this.copy('_water.scss', 'project/scss/_water.scss');
     this.copy('paint.scss', 'project/scss/paint.scss');
+
+    this.copy('brush.js', 'project/js/brush.js');
     }
 });
 
