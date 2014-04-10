@@ -1,0 +1,903 @@
+/* Welcome to Paint˚ 
+ * In this file we load all of our scss files */
+/*  Options  
+  */
+/*  Colors 
+*/
+/*  Global Colors  */
+/*  Link Colors  */
+/*  Grid 
+*/
+/*  Grid  */
+/* Set top/bottom margin & center wrap */
+/* Float box    next   to     each   other */
+/* Set   max        width  box */
+/* Set   2/3rds     box width  */
+/* Set   1/3rd      box width  */
+/*  Global Margins  */
+/*  Gutters  */
+/*  Elements 
+
+*/
+/* If grandchildren appear style parent like ^<-- */
+/*  Canvas Wrap  
+	*/
+/*  Header  
+	*/
+/* H1 */
+/* H2 */
+/*  Content  
+	*/
+/*  Footer  
+	*/
+/*  Footer-bits  */
+/*  Typography 
+*/
+/*  Base Font  */
+/*  Font  */
+/*  Link  */
+/*  Utility 
+*/
+/*  Water 
+*/
+/* We can just use layouts from say lrg-lap for lrg-palm landscape that
+way we don't need to device test for those widths... */
+/*  Media   */
+/*  Import Fonts 
+*/
+/*  !Link fonts in for production!  */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
+@font-face {
+  font-family: Scriptina;
+  src: url(../assets/SCRIPTIN.ttf);
+  font-weight: 400; }
+
+@font-face {
+  font-family: OldSansBlack;
+  src: url(../assets/OldSansBlack.ttf);
+  font-weight: 400; }
+
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  font: inherit;
+  vertical-align: baseline; }
+
+/*  Studio Addition  */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio, canvas, video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button, input, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button, input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*  Utility's */
+/*  Background */
+/* Grammer:[ <angle> | <side-or-corner>,] <color-stop> [, <color-stop>]+ */
+/*  Grid */
+/*  Custom columns */
+/*  Display Properties */
+/*  Transitions */
+/*  Indicators */
+/*  Helpers */
+/*  Font Utility's */
+/* Pass a number to font size in rem + px fallback '1 = 10px' */
+/* For override situation */
+/*  Text Shadow Styles  */
+/* Pass custom $xxxx-text-inset & define in options */
+/* Buttons 
+
+
+*/
+button, input[type="submit"], input[type="button"], input[type="reset"] {
+  background: #e05d22;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #e05d22 0%, #d94412 100%);
+  /* Chrome 10+, Safari 5.1+ */
+  background: linear-gradient(to bottom, #e05d22 0%, #d94412 100%);
+  /* W3C */
+  border: none;
+  border-bottom: 3px solid #b93207;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  padding: 11px 24px 10px;
+  text-decoration: none; }
+
+button:hover, button:focus, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
+  background: #ed6a31;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #ed6a31 0%, #e55627 100%);
+  /* Chrome 10+, Safari 5.1+ */
+  background: linear-gradient(to bottom, #ed6a31 0%, #e55627 100%);
+  /* W3C */
+  outline: none; }
+
+button:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
+  background: #d94412;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #d94412 0%, #e05d22 100%);
+  /* Chrome 10+, Safari 5.1+ */
+  background: linear-gradient(to bottom, #d94412 0%, #e05d22 100%);
+  /* W3C */
+  border: none;
+  border-top: 3px solid #b93207;
+  padding: 10px 24px 11px; }
+
+/* Flex Box Tutorial */
+/* http://www.html5rocks.com/en/tutorials/flexbox/quick/ */
+/* Based on 'simple grid' by Chris Coiyer
+source: http://css-tricks.com/dont-overthink-it-grids/ */
+/* Canvas
+*/
+/* Boxes 
+*/
+[class*='box-'] {
+  float: left; }
+
+
+/* Set 100% width box */
+
+/* Set 2/3rds box width */
+
+
+/* Set 1/3rd box width */
+
+/* %%%%%%%%% Usage %%%%%%%%% 
+ 
+ 	.someClass {
+ 		...
+ 		@extend %box-1-3;
+ 	}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%% */
+/* 
+	'@include box-custom($width)' to mixin a custom box 
+*/
+/* Clearing Context 
+*/
+
+
+
+/* Gutters 
+*/
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* When we set a width, that element stays that width, despite padding 
+or borders being applied */
+[class*='box-'] {
+  padding-right: 20px; }
+
+[class*='box'] {
+  margin-bottom: 7.5%; }
+
+[class*='box-']:last-of-type {
+  padding-right: 0; }
+
+/* Apply a fixed padding to the right side of all box except the last one */
+[class*='box']:last-of-type {
+  margin-bottom: 7.5%; }
+
+/* Apply a margin to the bottom of the last 'box' */
+/* Outside Gutters 
+*/
+
+/* Add left padding to the box parent(and optionally top and bottom padding) */
+
+/* Restore the right padding to the last box */
+/* ~~~~~~~~~ Water - Fluid CSS Response ~~~~~~~~~ */
+/* Full Spectrum Device Support....will add >2000px wide settings when I have a monitor to test on... */
+/* Considering switching to a function if more efficient */
+/* Spec definition: 
+
+			Values listed are device-width in inches
+
+	Tiny-Palm-Default : < 3.75in [ iPhone, tiny/small smartphone ]
+	Palm              : 3.75in - 5in [ med/large smartphone, <= Galaxy S4]
+	Lux-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
+	Tiny-Lap          : 6.7in+ - 8in [ iPad mini, med-size tablets ]
+	Lap               : 8in+ - 10in [ iPad, large tablets, small netbooks]
+	Lux-Lap           : 10in+ - 12in [ lux-tablets, reg-size netbooks]
+	Desk              : 12+in - 15in [ laptops w/ desk-use ]
+	Lux-Desk          : 15in+ [ lux desk device ]
+
+*/
+/* How to use water:
+
+.box {
+	float: left;
+	width: 97.534%;
+	@include respond-to(palm-landscape) { width: 98.232% }
+	@include respond-to(lap) { width: 66.333% }
+	@include respond-to(lap-landscape) { width: 72.843% }
+	@include respond-to(desk) { width: 55.324% }
+}
+
+ */
+/* ~~~~~~~~~ Fluid Media */
+img {
+  max-width: 100%; }
+
+iframe {
+  max-width: 100%; }
+
+video {
+  max-width: 100%; }
+
+/* ~~~~~~~~~ 2x */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { }
+
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
+/* Elements 
+
+
+*/
+/* Main 
+*/
+html, body {
+  background: url("../assets/background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%; }
+
+.canvas {
+  min-height: 100%; }
+
+#canvas__wrap {
+  overflow: auto;
+  min-height: 100%; }
+
+/* must be same height as the footer */
+.hide {
+  display: none; }
+
+/*Opera Fix*/
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px; }
+
+/* Canvas 
+*/
+body {
+  font-size: 62.5%;
+  font-weight: normal;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #FFF;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(''));
+  /* Chrome, Safari 4+ */
+  background-image: -webkit-linear-gradient(top, #FFF, '');
+  /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+  background-image: -moz-linear-gradient(top, #FFF, '');
+  /* Firefox 3.6-15 */
+  background-image: -o-linear-gradient(top, #FFF, '');
+  /* Opera 11.10-12.00 */
+  background-image: linear-gradient(top bottom, #FFF, '');
+  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  color: #272220;
+  text-shadow: 0px 1px 0px #e5e5ee; }
+
+.canvas {
+  width: 100%;
+  margin: 0;
+  /* default = center 0 auto */ }
+
+/*  Canvas Wrap  
+*/
+#canvas__wrap {
+  margin: 0px 5px; }
+
+/* Lootmob title & Shop
+*/
+.lootmob {
+  margin: 0.18em 0;
+  text-shadow: 0px 1px 0px #e5e5ee;
+  font-family: "OldSansBlack";
+  text-align: center; }
+
+.shop {
+  background: url("../assets/chest1.gif") no-repeat;
+  width: 58px;
+  height: 61px;
+  text-indent: -9999px;
+  margin: 200px auto 0; }
+
+.lootmob {
+  font-size: 160px;
+  font-size: 10rem; }
+
+.shop-link :hover {
+  color: #FF0000; }
+
+.shop-link :visited {
+  color: #333333; }
+
+/* Buy it now wrap
+*/
+.buyitnow__wrap {
+  margin: 0 auto 25px;
+  width: 450px;
+  height: 650px; }
+
+.buyitnow__title {
+  font-size: 52.8px;
+  font-size: 3.3rem;
+  margin: 0;
+  font-family: "Franchise"; }
+
+.buyitnow__sub-title {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 40px 0 15px; }
+
+.buyitnow__title, .buyitnow__sub-title {
+  text-align: center; }
+
+.lovehurtstee_img {
+  margin: 0 auto 10px;
+  background: url("../assets/lovehurtstee.jpg");
+  width: 450px;
+  height: 450px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  /* future proofing */
+  -khtml-border-radius: 4px;
+  /* for old Konqueror browsers */ }
+
+.lovehurtstee__altimg0, .lovehurtstee__altimg1, .lovehurtstee__altimg2, .lovehurtstee__altimg3 {
+  margin: 0 10px 17px 0; }
+
+.lovehurtstee__altimg0 {
+  float: left;
+  background: url("http://placehold.it/70x85");
+  width: 70px;
+  height: 85px; }
+
+.lovehurtstee__altimg1 {
+  float: left;
+  background: url("http://placehold.it/70x85");
+  width: 70px;
+  height: 85px; }
+
+.lovehurtstee__altimg2 {
+  float: left;
+  background: url("http://placehold.it/70x85");
+  width: 70px;
+  height: 85px; }
+
+.lovehurtstee__altimg3 {
+  float: left;
+  background: url("http://placehold.it/70x85");
+  width: 70px;
+  height: 85px; }
+
+.price__flag {
+  font-size: 48px;
+  font-size: 3rem;
+  margin: 26px 0 0 5px;
+  clear: both;
+  width: 100px; }
+
+.buyitnow__button {
+  margin: -15px 0 0 249px;
+  font-size: 32px;
+  font-size: 2rem;
+  position: relative;
+  bottom: 42px; }
+
+.line {
+  border: none;
+  color: white;
+  width: 100%;
+  height: 1px;
+  background: black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 245, from(#000), to(#fff)); }
+
+.line1 {
+  border: none;
+  color: white;
+  width: 100%;
+  height: 1px;
+  background: black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 235, from(#000), to(#fff)); }
+
+.line2 {
+  position: fixed;
+  bottom: 42px;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 2px;
+  background: black; }
+
+/* Misc 
+*/
+.floral {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 42px;
+  background: url("../assets/floral1.png");
+  margin: 0 !important; }
+
+/* Links 
+*/
+.footer {
+  text-align: center;
+  margin: 0 0 75px; }
+
+.fa {
+  color: #272220;
+  margin: 0 0 25px; }
+
+.fa-envelope {
+  margin-left: 20px; }
+
+.copyright {
+  font-size: 13.6px;
+  font-size: 0.85rem; }
+
+a:hover {
+  color: blue; }
+a:visited {
+  color: #333333; }
+
+a img {
+  border: none;
+  background: none; }
+  a img:hover img {
+    border: none;
+    background: none;
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
+
+/* Water - Response System */
+@media only screen and (min-width: 960px) and (max-width: 1152px) {
+  .buyitnow__wrap {
+    margin: 0 auto 5px;
+    width: 450px;
+    height: 450px; }
+  .lootmob {
+    font-size: 88px;
+    font-size: 5.5rem; }
+  .shop {
+    font-size: 32px;
+    font-size: 2rem; }
+  .buyitnow__sub-title {
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 20px 0 15px; }
+  .lovehurtstee_img {
+    margin: 0 auto 10px;
+    background: url("../assets/lovehurtstee_small.png");
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /* future proofing */
+    -khtml-border-radius: 4px;
+    /* for old Konqueror browsers */ }
+  .price__flag {
+    font-size: 32px;
+    font-size: 2rem;
+    margin: 30px 0 0 75px;
+    clear: both;
+    width: 100px; }
+  .buyitnow__button {
+    margin: -15px 0 6px 249px;
+    font-size: 32px;
+    font-size: 2rem;
+    position: relative;
+    bottom: 22px;
+    width: 100px; }
+  .line {
+    border: none;
+    color: white;
+    width: 100%;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
+  .line1 {
+    border: none;
+    color: white;
+    width: 100%;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
+  .line2 {
+    position: fixed;
+    bottom: 42px;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 2px;
+    background: black; } }
+
+@media only screen and (min-width: 1153px) and (max-width: 1440px) {
+  .buyitnow__wrap {
+    margin: 0 auto 5px;
+    width: 450px;
+    height: 450px; }
+  .lootmob {
+    font-size: 120px;
+    font-size: 7.5rem; }
+  .shop {
+    font-size: 48px;
+    font-size: 3rem; }
+  .buyitnow__sub-title {
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 20px 0 20px; }
+  .lovehurtstee_img {
+    margin: 0 auto 10px;
+    background: url("../assets/lovehurtstee_small.png");
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /* future proofing */
+    -khtml-border-radius: 4px;
+    /* for old Konqueror browsers */ }
+  .price__flag {
+    font-size: 32px;
+    font-size: 2rem;
+    margin: 30px 0 0 75px;
+    clear: both;
+    width: 100px; }
+  .buyitnow__button {
+    margin: -15px 0 6px 249px;
+    font-size: 32px;
+    font-size: 2rem;
+    position: relative;
+    bottom: 22px;
+    width: 100px; }
+  .line {
+    border: none;
+    color: white;
+    width: 100%;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
+  .line1 {
+    border: none;
+    color: white;
+    width: 100%;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff)); }
+  .line2 {
+    position: fixed;
+    bottom: 42px;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 2px;
+    background: black; }
+  .lovehurtstee_img {
+    margin: 0 auto -1px;
+    background: url("../assets/lovehurtstee_small.png");
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /* future proofing */
+    -khtml-border-radius: 4px;
+    /* for old Konqueror browsers */ } }
+
+/* Base 
+
+
+*/
