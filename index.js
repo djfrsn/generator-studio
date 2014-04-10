@@ -54,6 +54,7 @@ var StudioGenerator = yeoman.generators.Base.extend({
     this.copy('README.md', 'README.md');
 
     this.copy('index.html', 'project/index.html');
+    this.copy('404.html', 'project/404.html');
 
     this.copy('paint.css', 'project/css/paint.css');
     
