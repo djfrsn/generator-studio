@@ -1,4 +1,4 @@
-generator-studio
+generator-studi˚
 ================
 
 Yeoman generator ~ Studi˚
