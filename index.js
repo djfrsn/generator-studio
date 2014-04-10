@@ -38,8 +38,11 @@ var StudioGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+    this.mkdir('project');
+    this.mkdir('project/css');
+    this.mkdir('project/scss');
+    this.mkdir('project/js');
+    this.mkdir('project/docs');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
@@ -48,7 +51,17 @@ var StudioGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
-  }
+    this.copy('index.html', 'project/index.html');
+    this.copy('_base.scss', 'project/scss/_base.scss');
+    this.copy('_buttons.scss', 'project/scss/_buttons.scss');
+    this.copy('_canvas.scss', 'project/scss/_canvas.scss');
+    this.copy('_elements.scss', 'project/scss/_elements.scss');
+    this.copy('_options.scss', 'project/scss/_options.scss');
+    this.copy('_reset.scss', 'project/scss/_reset.scss');
+    this.copy('_utility.scss', 'project/scss/_utility.scss');
+    this.copy('_water.scss', 'project/scss/_water.scss');
+    this.copy('paint.scss', 'project/scss/paint.scss');
+    }
 });
 
 module.exports = StudioGenerator;

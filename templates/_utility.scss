@@ -1,0 +1,187 @@
+/*  Utility's */
+
+/*  Background */
+@mixin background($background-image){
+  background: url($background-image) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin svg( $width, $height, $svg: "../content/img/background/svg.svg.png", $display: block) {
+  background: url($svg);
+  display: $display;
+  text-indent: -9999px;
+  width: $width;
+  height: $height;
+  background-size: 100px 82px;
+}
+
+@mixin background-gradient($background-color: #fff, $color-stop: #ddd){
+	background-color: $background-color;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($background-color), to($color-stop)); /* Chrome, Safari 4+ */
+	background-image: -webkit-linear-gradient(top, $background-color, $color-stop); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+	background-image: -moz-linear-gradient(top, $background-color, $color-stop); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, $background-color, $color-stop); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(top bottom, $background-color, $color-stop); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+} /* Grammer:[ <angle> | <side-or-corner>,] <color-stop> [, <color-stop>]+ */
+
+/*  Grid */
+@mixin canvas-width($canvas-width: $canvas-width-default){
+	width: $canvas-width;
+}
+@mixin canvas-margin($canvas-margin: $canvas-margin-default){
+	margin: $canvas-margin;
+}
+
+@mixin box-sizing($box-sizing: border-box){
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*  Custom columns */
+
+@mixin enter-button-width($width){
+	width: $width;
+} 
+
+/*  Display Properties */	
+@mixin display($display: $display){
+	display: $display;
+}
+@mixin text-align($text-align: $text-align){
+	text-align: $text-align;
+}
+@mixin margin($margin: $margin){
+	margin: $margin;
+}
+@mixin padding($padding: $padding){
+	padding: $padding;
+}
+
+/*  Transitions */
+
+@mixin fade($opacity: $fade-opacity,$transition-time: $fade-transition-time){
+   opacity: $opacity;
+   -o-transition: $transition-time $transition-timing-function;
+   -moz-transition: $transition-time $transition-timing-function;
+   -webkit-transition: $transition-time $transition-timing-function;
+   transition: $transition-time $transition-timing-function;
+}
+
+@mixin fade-hover($opacity: $fade-hover-opacity){
+	&:hover {
+    	opacity: $opacity;
+	}
+}
+
+@mixin color-transition($color: $color-transition,$transition-time: $fade-transition-time){
+   color: $color;
+   -o-transition: $transition-time $transition-timing-function;
+   -moz-transition: $transition-time $transition-timing-function;
+   -webkit-transition: $transition-time $transition-timing-function;
+   transition: $transition-time $transition-timing-function;
+}
+
+@mixin color-hover($color: $fade-hover-color-default){
+	&:hover {
+    	color: $color;
+	}
+}
+
+/*  Indicators */
+
+@mixin muted($opacity: $muted-opacity, $opacity-alpha: $muted-opacity-alpha){
+	opacity: $opacity;
+	filter:alpha(opacity = $opacity-alpha);
+}
+
+/*  Helpers */
+
+@mixin border-radius($radius: $border-radius){
+	-o-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius; /* future proofing */
+	-khtml-border-radius: $radius; /* for old Konqueror browsers */
+	background-clip: padding-box; /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+}
+
+@mixin rgba($red ,$green ,$blue ,$alpha: 1){
+	background: rbg($red, $green, $blue); /* Fallback */
+	background: rgba($red, $green, $blue, $alpha)
+}
+
+@mixin top-border($width: 1px, $style: solid, $color: black){
+	border-top: $width $style $color;
+}
+
+@mixin top-bottom-border($width: 1px, $style: solid, $color: black){
+	border-top: $width $style $color;
+	border-bottom: $width $style $color;
+}
+
+@mixin right-border($width: 1px, $style: solid, $color: black){
+	border-right: $width $style $color;
+}
+
+@mixin element-rotate(){
+	-webkit-transform: rotate(7.5deg);  /* Chrome, Safari 3.1+ */
+	-moz-transform: rotate(7.5deg);  /* Firefox 3.5-15 */
+	-ms-transform: rotate(7.5deg);  /* IE 9 */
+	-o-transform: rotate(7.5deg);  /* Opera 10.50-12.00 */
+	transform: rotate(7.5deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+@mixin element-scale(){
+	-webkit-transform: scale(0.8);  /* Chrome, Safari 3.1+ */
+    -moz-transform: scale(0.8);  /* Firefox 3.5+ */
+    -ms-transform: scale(0.8);  /* IE 9 */
+    -o-transform: scale(0.8);  /* Opera 10.50-12.00 */
+    transform: scale(0.8);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+/*  Font Utility's */
+
+@mixin base-font-size($font-size: $base-font-size, $font-weight: $base-font-weight, $font-family: $base-font-family){
+	font-size: $font-size;
+	font-weight: $font-weight;
+	font-family: $font-family;
+}
+@mixin font($font-weight: $font-weight-default,$font-family: $font-family-default){
+	font-weight: $font-weight;
+	font-family: $font-family;
+}
+
+@mixin fitText-font-size($sizeValue: 1.6) {
+	font-size: ($sizeValue) + em;
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 16) + px;
+  font-size: $sizeValue + rem;
+} /* Pass a number to font size in rem + px fallback '1 = 10px' */
+
+@mixin font-size-important($sizeValue: 1.6) {
+  font-size: ($sizeValue * 16) + px !important;
+  font-size: $sizeValue + rem !important;
+} /* For override situation */
+
+
+/*  Text Shadow Styles  */
+
+$text-shadow-default: 1px 1px rgba(236, 236, 236, 0.55);
+
+@mixin text-shadow($text-shadow: $text-shadow-default){
+	@if $text-shadow == text-shadow {
+		text-shadow: $text-shadow-default;
+	}
+	@if $text-shadow == hammer-text-shadow {
+		text-shadow: 0 -1px 0px rgb(213, 213, 213);
+	}
+	@if $text-shadow == apple-text-shadow {
+		text-shadow: #fff 1px 1px;;
+	}
+} /* Pass custom $xxxx-text-inset & define in options */

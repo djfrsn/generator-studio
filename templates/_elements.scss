@@ -1,0 +1,359 @@
+/* Elements 
+
+
+*/
+
+/* Main 
+*/
+html, body { 
+	background: url("../assets/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%; }
+
+.canvas { min-height: 100%; }
+
+#canvas__wrap { overflow:auto; min-height: 100%; }  /* must be same height as the footer */
+
+.hide {
+	display: none;
+}
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
+/* Canvas 
+*/
+body {
+	@include base-font-size($base-font-size, $base-font-weight, $base-font-family);
+	@include background-gradient(#FFF, '');
+	color: $secondary;
+	text-shadow: 0px 1px 0px #e5e5ee;
+}
+.canvas {
+	@include canvas;
+}
+
+/*  Canvas Wrap  
+*/
+#canvas__wrap {
+	margin: $canvas_wrap-margin;
+}
+
+/* Lootmob title & Shop
+*/
+.lootmob {
+	margin: 0.18em 0;
+	text-shadow: 0px 1px 0px #e5e5ee;
+	font-family: "OldSansBlack";
+	text-align: center;
+}
+
+.shop {
+	background: url("../assets/chest1.gif") no-repeat;
+	width: 58px;
+	height: 61px;
+	text-indent: -9999px;
+	margin: 200px auto 0;
+}
+
+.lootmob {
+	@include font-size(10);
+}
+
+
+.shop-link :hover { color: $red; }
+.shop-link :visited { color: $muted; }
+
+/* Buy it now wrap
+*/
+.buyitnow__wrap {
+	margin: 0 auto 25px;
+	width: 450px;
+	height: 650px;
+}
+
+.buyitnow__title { 
+	@include font-size(3.3); 
+	margin: 0;
+	font-family: "Franchise";
+	 }
+.buyitnow__sub-title { 
+	@include font-size(1); 
+	margin: 40px 0 15px; 
+	}
+.buyitnow__title, .buyitnow__sub-title {
+	text-align: center;
+}
+
+.lovehurtstee_img {
+	margin: 0 auto 10px;
+	background: url("../assets/lovehurtstee.jpg");
+	width: 450px;
+	height: 450px;
+	-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px; /* future proofing */
+-khtml-border-radius: 4px; /* for old Konqueror browsers */
+}
+
+.lovehurtstee__altimg0, .lovehurtstee__altimg1, .lovehurtstee__altimg2, .lovehurtstee__altimg3 {
+	margin: 0 10px 17px 0;
+}
+
+.lovehurtstee__altimg0 {
+	float: left;
+	background: url("http://placehold.it/70x85");
+	width: 70px;
+	height: 85px;
+	}
+.lovehurtstee__altimg1 {
+	float: left;
+	background: url("http://placehold.it/70x85");
+	width: 70px;
+	height: 85px;
+	}.lovehurtstee__altimg2 {
+	float: left;
+	background: url("http://placehold.it/70x85");
+	width: 70px;
+	height: 85px;
+	}.lovehurtstee__altimg3 {
+	float: left;
+	background: url("http://placehold.it/70x85");
+	width: 70px;
+	height: 85px;
+	}
+.price__flag {
+	@include font-size(3);
+	margin: 26px 0 0 5px;
+	clear: both;
+	width: 100px;
+}
+.buyitnow__button {
+	margin: -15px 0 0 249px;
+	@include font-size(2);
+	position: relative;
+	bottom: 42px;
+}
+.line {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 245, from(#000), to(#fff));
+}
+.line1 {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 235, from(#000), to(#fff));
+}
+.line2 {
+		position: fixed;
+	bottom: 42px;
+    border:none;
+    color:white;
+    width: 100%;
+    height:2px;
+    background:black;
+}
+/* Misc 
+*/
+.floral {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 42px;
+	background: url("../assets/floral1.png");
+	margin: 0 !important;
+}
+
+/* Links 
+*/
+
+.footer { 
+	text-align: center;
+	margin: 0 0 75px;
+	 }
+
+.fa {
+	color: $secondary;
+	margin: 0 0 25px;
+}
+.fa-envelope {
+	margin-left: 20px;
+}
+.copyright {
+	@include font-size(.85);
+}
+a {
+	&:hover { color: $hover; }
+	&:visited { color: $visited; }
+}
+
+a img {
+	border: none;
+	background: none;
+	&:hover img {
+		border: none;
+		background: none;
+		opacity: $base-link-img-hover-opacity;
+		filter:alpha(opacity=$base-link-img-hover-alphaopacity);
+	}
+}
+
+
+/* Water - Response System */
+
+@include respond-to(lrg-lap) { 
+	.buyitnow__wrap {
+	margin: 0 auto 5px;
+	width: 450px;
+	height: 450px;
+}
+	.lootmob {
+	@include font-size(5.5);
+}
+
+.shop {
+	@include font-size(2);	
+}
+.buyitnow__sub-title { 
+	@include font-size(1); 
+	margin: 20px 0 15px; 
+	}
+.lovehurtstee_img {
+	margin: 0 auto 10px;
+	background: url("../assets/lovehurtstee_small.png");
+	width: 250px;
+	height: 250px;
+	-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px; /* future proofing */
+-khtml-border-radius: 4px; /* for old Konqueror browsers */
+}
+.price__flag {
+	@include font-size(2);
+	margin: 30px 0 0 75px;
+	clear: both;
+	width: 100px;
+}
+.buyitnow__button {
+	margin: -15px 0 6px 249px;
+	@include font-size(2);
+	position: relative;
+	bottom: 22px;
+	width: 100px;
+}
+.line {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff));
+}
+.line1 {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff));
+}
+.line2 {
+  position: fixed;
+  bottom: 42px;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 2px;
+  background: black; }
+ }
+
+@include respond-to(desk) { 
+	.buyitnow__wrap {
+	margin: 0 auto 5px;
+	width: 450px;
+	height: 450px;
+}
+	.lootmob {
+	@include font-size(7.5);
+}
+
+.shop {
+	@include font-size(3);	
+}
+.buyitnow__sub-title { 
+	@include font-size(1); 
+	margin: 20px 0 20px; 
+	}
+.lovehurtstee_img {
+	margin: 0 auto 10px;
+	background: url("../assets/lovehurtstee_small.png");
+	width: 250px;
+	height: 250px;
+	-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px; /* future proofing */
+-khtml-border-radius: 4px; /* for old Konqueror browsers */
+}
+.price__flag {
+	@include font-size(2);
+	margin: 30px 0 0 75px;
+	clear: both;
+	width: 100px;
+}
+.buyitnow__button {
+	margin: -15px 0 6px 249px;
+	@include font-size(2);
+	position: relative;
+	bottom: 22px;
+	width: 100px;
+}
+.line {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff));
+}
+.line1 {
+    border:none;
+    color:white;
+    width: 100%;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 135, from(#000), to(#fff));
+}
+.line2 {
+  position: fixed;
+  bottom: 42px;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 2px;
+  background: black; }
+.lovehurtstee_img {
+	margin: 0 auto -1px;
+	background: url("../assets/lovehurtstee_small.png");
+	width: 250px;
+	height: 250px;
+	-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px; /* future proofing */
+-khtml-border-radius: 4px; /* for old Konqueror browsers */
+}
+ }

@@ -1,0 +1,122 @@
+/* ~~~~~~~~~ Water - Fluid CSS Response ~~~~~~~~~ */
+// Logo = ~ /* ~~~~~~~~~ Water */
+
+/* Full Spectrum Device Support....will add >2000px wide settings when I have a monitor to test on... */
+
+// Tiny Palm First = <= 319px = <--(default settings)
+// Standard Palm = > 360px < 479px 
+// Break-0-landscape = > 560px
+// Luxury Palm = > 480px < 640px  
+// Break-1-landscape = > 768px 
+// Tiny-Lap = > 641px < 767px 
+// Lap = > 768px < 959px 
+// Break-2-landscape = > 1024px
+// Luxury Lap = > 960px < 11152px 
+// Desk = > 1553px < 1440px 
+// Luxury Desk = > 1441px
+
+@mixin respond-to($media) {
+	@if $media == tiny-palm {
+		@media only screen and (max-width: $tiny-palm-max-width) and (orientation: portrait) { @content; }
+	}
+	@if $media == palm {
+		@media only screen and (min-width: $palm-min-width) and (max-width: $palm-max-width) and (orientation: portrait) { @content; }
+	}
+	@else if $media == break-0-landscape {
+		@media only screen and (min-width: $break-0-landscape) and (orientation: landscape) { @content; }
+	}
+	@else if $media == lrg-palm {
+		@media only screen and (min-width: $lrg-palm-min-width) and (max-width: $lrg-palm-max-width) and (orientation: portrait) { @content; }
+	}
+	@else if $media == iPhone5 {
+		@media only screen and (device-height : 568px) and (device-width : 320px) and (-webkit-min-device-pixel-ratio: 2) { @content; }
+	}
+	@else if $media == break-1-landscape {
+		@media only screen and (min-width: $break-1-landscape) and (orientation: landscape) { @content; }
+	}
+	@else if $media == tiny-lap {
+		@media only screen and (min-width: $tiny-lap-min-width) and (max-width: $tiny-lap-max-width) and (orientation: portrait) { @content; }		
+	}
+	@else if $media == lap {
+		@media only screen and (min-width: $lap-min-width) and (max-width: $lap-max-width) { @content; }		
+	}
+	@else if $media == break-2-landscape {
+		@media only screen and (min-width: $break-2-landscape) and (orientation: landscape) { @content; }		
+	}
+	@else if $media == lrg-lap {
+		@media only screen and (min-width: $lrg-lap-min-width) and (max-width: $lrg-lap-max-width) { @content; }		
+	}
+	@else if $media == desk {
+		@media only screen and (min-width: $desk-min-width) and (max-width: $desk-max-width) { @content; }
+	}
+	@else if $media == lrg-desk {
+		@media only screen and (min-width: $lrg-desk-min-width) { @content; }
+	}
+}
+
+
+/* Considering switching to a function if more efficient */
+$device-size: 1px;
+
+
+@function rsp($device-type) {
+	@if $device-type == device-size {
+		@return $device-size;
+	}
+	@while $device-type == device-size {
+	}
+}
+
+/* Spec definition: 
+
+			Values listed are device-width in inches
+
+	Tiny-Palm-Default : < 3.75in [ iPhone, tiny/small smartphone ]
+	Palm              : 3.75in - 5in [ med/large smartphone, <= Galaxy S4]
+	Lux-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
+	Tiny-Lap          : 6.7in+ - 8in [ iPad mini, med-size tablets ]
+	Lap               : 8in+ - 10in [ iPad, large tablets, small netbooks]
+	Lux-Lap           : 10in+ - 12in [ lux-tablets, reg-size netbooks]
+	Desk              : 12+in - 15in [ laptops w/ desk-use ]
+	Lux-Desk          : 15in+ [ lux desk device ]
+
+*/
+
+/* How to use water:
+
+.box {
+	float: left;
+	width: 97.534%;
+	@include respond-to(palm-landscape) { width: 98.232% }
+	@include respond-to(lap) { width: 66.333% }
+	@include respond-to(lap-landscape) { width: 72.843% }
+	@include respond-to(desk) { width: 55.324% }
+}
+
+ */
+
+/* ~~~~~~~~~ Fluid Media */
+
+img {
+	max-width: $img-max-width;
+}
+
+iframe {
+	max-width: $iframe-max-width;
+}
+
+video {
+	max-width: $video-max-width;
+}
+
+
+/* ~~~~~~~~~ 2x */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){}
+
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
+/* ~~~~~~~~~ */
