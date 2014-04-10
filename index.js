@@ -65,7 +65,8 @@ var StudioGenerator = yeoman.generators.Base.extend({
     this.copy('_water.scss', 'project/scss/_water.scss');
     this.copy('paint.scss', 'project/scss/paint.scss');
 
-    this.copy('brush.js', 'project/js/brush.js');
+    this.copy('LOGGER.md', 'project/docs/LOGGER.md');
+    this.copy('ISSUES.md', 'project/docs/ISSUES.md');
     }
 });
 
