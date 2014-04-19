@@ -1,97 +1,74 @@
-/* Based on 'simple grid' by Chris Coiyer
-source: http://css-tricks.com/dont-overthink-it-grids/ */
-// Flexible Layout Calculator: http://responsv.com/flexible-math/
+/* Canvas purpose is to add semantics to your stylesheets */
 
 /* Canvas
 */
-@mixin canvas($canvas-width: $canvas-width-default, $canvas-margin: $canvas-margin-default) {
-	@include canvas-width($canvas-width-default); //* default = 90%/1140px */
-	@include canvas-margin($canvas-margin-default); /* default = center 0 auto */
+@mixin canvas( $canvas-width: 100%, $canvas-height: 100%, $canvas-margin: 0 ) {
+	width: $canvas-width;
+	height: $canvas-height;
+	margin: $canvas-margin;
 }
 
-/* Boxes 
-*/
-[class*='box-'] {
-	float: $set-box-float;
-} 
-
-%box, .box {
-	width: $box-width;
-} /* Set 100% width box */
-
-%box-2-3, .box-2-3 {
-	width: $box-2-3-width;
-} /* Set 2/3rds box width */
-
-%box-1-2, .box-1-2 {
-	width:  $box-1-2-width;
-}
-
-%box-1-3, .box-1-3 {
-	width: $box-1-3-width;
-} /* Set 1/3rd box width */
-
-%box-1-4, .box-1-4 {
-	width: $box-1-4-width;
-}
-
-
-/* %%%%%%%%% Usage %%%%%%%%% 
- 
- 	.someClass {
- 		...
- 		@extend %box-1-3;
- 	}
-
- %%%%%%%%%%%%%%%%%%%%%%%%% */
-
-
-/* 
-	'@include box-custom($width)' to mixin a custom box 
-*/
-
-/* Clearing Context 
-*/
-%wrap:after {
-	@include display($display); /* Will take any display value, default = "inline-block" */
-	content: "";
-	clear: both;
-}
-
-%clear {
-	clear: both;
-}
-
-%clear-none {
-	clear: none;
-}
-/* Gutters 
-*/
 *, *:after, *:before {
 	@include box-sizing;
 } /* When we set a width, that element stays that width, despite padding 
 or borders being applied */
 
-[class*='box-'] {
-	padding-right: $gutters;
-}
-[class*='box'] {
-	margin-bottom: $box-margin-bottom;
-}
-[class*='box-']:last-of-type {
-	padding-right: $kill-gutter;
-}/* Apply a fixed padding to the right side of all box except the last one */
-
-[class*='box']:last-of-type {
-	margin-bottom: $box-margin-bottom;
-} /* Apply a margin to the bottom of the last 'box' */
-
-/* Outside Gutters 
+/* Boxes 
 */
-%wrap-pad {
-	padding: $gutters;
-} /* Add left padding to the box parent(and optionally top and bottom padding) */
 
-%wrap-pad > [class*='box-']:last-of-type {
-	padding-right: $last-outside-gutter;
-} /* Restore the right padding to the last box */
+@mixin canvas-box( $canvas-box-width: 100%, $canvas-box-height: 100%, $canvas-box-margin: 0 ) {
+	width: $canvas-box-width;
+	height: $canvas-box-height;
+	margin: $canvas-box-margin;
+} /* Use boxes as grid/layout structures for semantic css, layout 
+structures can now be easily identified in your stylesheets */
+
+@mixin gutters( $padding: 0 20px 0 ) {
+	padding: $padding;
+} /* Use gutters for semantics & consistent padding in your layout structures */
+
+/* Clearing Context 
+*/
+
+@mixin clear-both( $clear-both: both ) { 
+	clear: both; }
+
+@mixin clear-left( $clear-left: left ) { 
+	clear: left; }
+
+@mixin clear-right( $clear-right: right ) { 
+	clear: right; }
+
+@mixin clear-none( $clear-none: none ) { 
+	clear: none; } /* Clear with readability */
+
+
+/* %%%%%%%%% Usage %%%%%%%%% 
+ 
+ 	header {
+ 		...
+ 		@include box( 600px, 300px, 0 auto );
+ 	}
+
+ 	aside {
+ 		...
+ 		@include clear-left();
+ 		@include box( 200px, 800px, 0)
+ 	}
+
+ 	.column__0 {
+ 	    ... 
+ 		@include box(); 
+ 		@include gutters(); }
+
+	.column__1 {
+	    ... 
+		@include box(); 
+		@include gutters(); }
+
+	.column__2 {
+	    ... 
+		@include box(); 
+		@include gutters(); }
+
+ %%%%%%%%%%%%%%%%%%%%%%%%% */

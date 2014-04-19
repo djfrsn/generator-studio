@@ -73,18 +73,18 @@ $device-size: 1px;
 
 	Tiny-Palm-Default : < 3.75in [ iPhone, tiny/small smartphone ]
 	Palm              : 3.75in - 5in [ med/large smartphone, <= Galaxy S4]
-	Lux-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
+	lrg-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
 	Tiny-Lap          : 6.7in+ - 8in [ iPad mini, med-size tablets ]
 	Lap               : 8in+ - 10in [ iPad, large tablets, small netbooks]
-	Lux-Lap           : 10in+ - 12in [ lux-tablets, reg-size netbooks]
+	lrg-Lap           : 10in+ - 12in [ lrg-tablets, reg-size netbooks]
 	Desk              : 12+in - 15in [ laptops w/ desk-use ]
-	Lux-Desk          : 15in+ [ lux desk device ]
+	lrg-Desk          : 15in+ [ lrg desk device ]
 
 */
 
 /* How to use water:
 
-.box {
+.column__0 {
 	float: left;
 	width: 97.534%;
 	@include respond-to(palm-landscape) { width: 98.232% }
@@ -98,15 +98,15 @@ $device-size: 1px;
 /* ~~~~~~~~~ Fluid Media */
 
 img {
-	max-width: $img-max-width;
+	max-width: 100%;
 }
 
 iframe {
-	max-width: $iframe-max-width;
+	max-width: 100%;
 }
 
 video {
-	max-width: $video-max-width;
+	max-width: 100%;
 }
 
 
@@ -115,8 +115,3 @@ video {
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5){}
-
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */

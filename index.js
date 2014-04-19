@@ -44,14 +44,15 @@ var StudioGenerator = yeoman.generators.Base.extend({
     this.mkdir('project/js');
     this.mkdir('project/docs');
 
-    this.copy('_package.json', 'package.json');
+    this.copy('package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
   },
 
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
-    this.copy('README.md', 'README.md');
+    
+    this.copy('.gitignore', 'project/.gitignore');
 
     this.copy('index.html', 'project/index.html');
     this.copy('404.html', 'project/404.html');
@@ -66,12 +67,17 @@ var StudioGenerator = yeoman.generators.Base.extend({
     this.copy('_reset.scss', 'project/scss/_reset.scss');
     this.copy('_utility.scss', 'project/scss/_utility.scss');
     this.copy('_water.scss', 'project/scss/_water.scss');
+    this.copy('_flexbox.scss', 'project/scss/_flexbox.scss');
     this.copy('paint.scss', 'project/scss/paint.scss');
     
     this.copy('brush.js', 'project/js/brush.js');
+    
+    this.copy('gruntfile.js', 'project/gruntfile.js');
+    this.directory('node_modules', 'project/node_modules');
+    this.copy('package.json', 'project/package.json');
 
     this.copy('LOGGER.md', 'project/docs/LOGGER.md');
-    this.copy('ISSUES.md', 'project/docs/ISSUES.md');
+    this.copy('TRACKER.md', 'project/docs/TRACKER.md');
     }
 });
 

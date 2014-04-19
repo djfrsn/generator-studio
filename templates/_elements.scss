@@ -1,76 +1,43 @@
 /* Elements 
-
-
+*
+*
 */
 
-
 /* @TODO learn how to use :after :before line-height */
-
 
 /* Canvas 
 */
 html, body { height: 100%; }
 
 body {
-	@include base-font-size($base-font-size, $base-font-weight, $base-font-family);
+	@include base-font-size(); /* 62.5% Baseline */
 	@include background-gradient(#FFFFFF, '$secondary');
 	color: $primary;
 }
-.canvas {
-	@include canvas;
+.canvas section {
+	@include canvas();
 }
-
-
-/* OO Styles 
-*/
-.header, .text-content, .footer { 
-	@extend %clear;
-}
-
 
 /* Header 
 */
+
 .header__h1 {
-	@include font-size($header-h1-font-size);
-	margin: $header-h1-margin;
+	@include font-size( 2 );
+	margin: 0;
 }
 
 .msg {
-	@include font-size($msg-font-size);
-	margin: $msg-margin;
+	@include font-size( 0.75 );
+	margin: 0 0 -0.25rem;
 }
-
 
 /* Footer 
 */
-.footer {
-	margin: $footer-margin;
-}
 
 .footer__bits {
-	color: $footer-bits-color;
-	@include font-size($footer-font-size);
+	color: $primary;
+	@include font-size( 0.55 );
 }
-
-
-/* Links 
-*/
-a {
-	&:hover { color: $hover; }
-	&:visited { color: $visited; }
-}
-
-a img {
-	border: none;
-	background: none;
-	&:hover img {
-		border: none;
-		background: none;
-		opacity: $base-link-img-hover-opacity;
-		filter:alpha(opacity=$base-link-img-hover-alphaopacity);
-	}
-}
-
 
 /* Water - Response System */
 

@@ -1,27 +1,16 @@
-<!-- %%%%%%%%%%%% FIRST UP 
+<!-- %%%%%%%%%%%% ON THE MOUND
 
-@@Mission: Refactor Html
-
-Refactor SCSS
-
-Alter margin for footer
-
-Refactor SCSS stay within file where possible 
-
-update with appropriate html
+When in a file add a space after first ( for better reading on vars and such
 
  %%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-Separation of concerns
+<!-- %%%%%%%%%%%% FIRST UP 
 
-<!-- To Test add documentation. Do not add uncessesary structure. -->
-
+ %%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 <!-- %%%%%%%%%%%%% BACKBURNER 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-
 
 The chaos strategy is a strategy of software development based on the chaos model. The main rule is always resolve the most important issue first.
 An issue is an incomplete programming task.

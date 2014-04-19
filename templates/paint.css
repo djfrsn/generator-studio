@@ -1,48 +1,17 @@
 /* Welcome to Paint˚ 
  * In this file we load all of our scss files */
 /*  Options  
-  */
+*
+*
+*/
 /*  Colors 
 */
 /*  Global Colors  */
-/*  Link Colors  */
-/*  Grid 
-*/
-/*  Grid  */
-/* Set top/bottom margin & center wrap */
-/* Float box    next   to     each   other */
-/* Set   max        width  box */
-/* Set   2/3rds     box width  */
-/* Set   1/3rd      box width  */
-/*  Global Margins  */
-/*  Gutters  */
-/*  Elements 
-
-*/
-/* If grandchildren appear style parent like ^<-- */
-/*  Canvas Wrap  
-	*/
-/*  Header  
-	*/
-/* H1 */
-/* H2 */
-/*  Content  
-	*/
-/*  Footer  
-	*/
-/*  Footer-bits  */
-/*  Typography 
-*/
-/*  Base Font  */
-/*  Font  */
-/*  Link  */
-/*  Utility 
-*/
+/*  Base Font Family  */
 /*  Water 
 */
 /* We can just use layouts from say lrg-lap for lrg-palm landscape that
 way we don't need to device test for those widths... */
-/*  Media   */
 /*  Import Fonts 
 */
 /*  !Link fonts in for production!  */
@@ -364,14 +333,11 @@ table {
 /*  Background */
 /* Grammer:[ <angle> | <side-or-corner>,] <color-stop> [, <color-stop>]+ */
 /*  Grid */
-/*  Custom columns */
-/*  Display Properties */
-/*  Transitions */
 /*  Indicators */
 /*  Helpers */
 /*  Font Utility's */
 /* Pass a number to font size in rem + px fallback '1 = 10px' */
-/* For override situation */
+/* Override situation */
 /*  Text Shadow Styles  */
 /* Pass custom $xxxx-text-inset & define in options */
 /* Buttons 
@@ -415,42 +381,8 @@ button:active, input[type="submit"]:active, input[type="button"]:active, input[t
 
 /* Flex Box Tutorial */
 /* http://www.html5rocks.com/en/tutorials/flexbox/quick/ */
-/* Based on 'simple grid' by Chris Coiyer
-source: http://css-tricks.com/dont-overthink-it-grids/ */
+/* Canvas purpose is to add semantics to your stylesheets */
 /* Canvas
-*/
-/* Boxes 
-*/
-[class*='box-'] {
-  float: left; }
-
-
-/* Set 100% width box */
-
-/* Set 2/3rds box width */
-
-
-/* Set 1/3rd box width */
-
-/* %%%%%%%%% Usage %%%%%%%%% 
- 
- 	.someClass {
- 		...
- 		@extend %box-1-3;
- 	}
-
- %%%%%%%%%%%%%%%%%%%%%%%%% */
-/* 
-	'@include box-custom($width)' to mixin a custom box 
-*/
-/* Clearing Context 
-*/
-
-.header, .text-content, .footer {
-  clear: both; }
-
-
-/* Gutters 
 */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -459,26 +391,43 @@ source: http://css-tricks.com/dont-overthink-it-grids/ */
 
 /* When we set a width, that element stays that width, despite padding 
 or borders being applied */
-[class*='box-'] {
-  padding-right: 20px; }
-
-[class*='box'] {
-  margin-bottom: 7.5%; }
-
-[class*='box-']:last-of-type {
-  padding-right: 0; }
-
-/* Apply a fixed padding to the right side of all box except the last one */
-[class*='box']:last-of-type {
-  margin-bottom: 7.5%; }
-
-/* Apply a margin to the bottom of the last 'box' */
-/* Outside Gutters 
+/* Boxes 
 */
+/* Use boxes as grid/layout structures for semantic css, layout 
+structures can now be easily identified in your stylesheets */
+/* Use gutters for semantics & consistent padding in your layout structures */
+/* Clearing Context 
+*/
+/* Clear with readability */
+/* %%%%%%%%% Usage %%%%%%%%% 
+ 
+ 	header {
+ 		...
+ 		@include box( 600px, 300px, 0 auto );
+ 	}
 
-/* Add left padding to the box parent(and optionally top and bottom padding) */
+ 	aside {
+ 		...
+ 		@include clear-left();
+ 		@include box( 200px, 800px, 0)
+ 	}
 
-/* Restore the right padding to the last box */
+ 	.column__0 {
+ 	    ... 
+ 		@include box(); 
+ 		@include gutters(); }
+
+	.column__1 {
+	    ... 
+		@include box(); 
+		@include gutters(); }
+
+	.column__2 {
+	    ... 
+		@include box(); 
+		@include gutters(); }
+
+ %%%%%%%%%%%%%%%%%%%%%%%%% */
 /* ~~~~~~~~~ Water - Fluid CSS Response ~~~~~~~~~ */
 /* Full Spectrum Device Support....will add >2000px wide settings when I have a monitor to test on... */
 /* Considering switching to a function if more efficient */
@@ -488,17 +437,17 @@ or borders being applied */
 
 	Tiny-Palm-Default : < 3.75in [ iPhone, tiny/small smartphone ]
 	Palm              : 3.75in - 5in [ med/large smartphone, <= Galaxy S4]
-	Lux-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
+	lrg-Palm          : 5in+ - 6.7in [ Galaxy Note, small tablets ]
 	Tiny-Lap          : 6.7in+ - 8in [ iPad mini, med-size tablets ]
 	Lap               : 8in+ - 10in [ iPad, large tablets, small netbooks]
-	Lux-Lap           : 10in+ - 12in [ lux-tablets, reg-size netbooks]
+	lrg-Lap           : 10in+ - 12in [ lrg-tablets, reg-size netbooks]
 	Desk              : 12+in - 15in [ laptops w/ desk-use ]
-	Lux-Desk          : 15in+ [ lux desk device ]
+	lrg-Desk          : 15in+ [ lrg desk device ]
 
 */
 /* How to use water:
 
-.box {
+.column__0 {
 	float: left;
 	width: 97.534%;
 	@include respond-to(palm-landscape) { width: 98.232% }
@@ -521,13 +470,9 @@ video {
 /* ~~~~~~~~~ 2x */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { }
 
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */
-/* ~~~~~~~~~ */
 /* Elements 
-
-
+*
+*
 */
 /* @TODO learn how to use :after :before line-height */
 /* Canvas 
@@ -539,6 +484,7 @@ body {
   font-size: 62.5%;
   font-weight: normal;
   font-family: 'Ubuntu', sans-serif;
+  /* 62.5% Baseline */
   background-color: #FFFFFF;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to('$secondary'));
   /* Chrome, Safari 4+ */
@@ -552,56 +498,34 @@ body {
   /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
   color: #0A0A0A; }
 
-.canvas {
+.canvas section {
   width: 100%;
-  margin: 0;
-  /* default = center 0 auto */ }
-
-/* OO Styles 
-*/
+  height: 100%;
+  margin: 0; }
 
 /* Header 
 */
 .header__h1 {
   font-size: 32px;
   font-size: 2rem;
-  margin: 0 0 0 0; }
+  margin: 0; }
 
 .msg {
   font-size: 12px;
   font-size: 0.75rem;
-  margin: 0 0 -0.25rem 0; }
+  margin: 0 0 -0.25rem; }
 
 /* Footer 
 */
-.footer {
-  margin: 0; }
-
 .footer__bits {
   color: #0A0A0A;
   font-size: 8.8px;
   font-size: 0.55rem; }
 
-/* Links 
-*/
-a:hover {
-  color: blue; }
-a:visited {
-  color: #808080; }
-
-a img {
-  border: none;
-  background: none; }
-  a img:hover img {
-    border: none;
-    background: none;
-    opacity: 0.8;
-    filter: alpha(opacity=80); }
-
 /* Water - Response System */
 /* Base 
-
-
+*
+*
 */
 @media print {
   a[href]:after {

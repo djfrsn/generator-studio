@@ -1,6 +1,7 @@
 /*  Utility's */
 
 /*  Background */
+
 @mixin background($background-image: "../content/img/background/background0.png"){
   background: url($background-image) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -28,67 +29,11 @@
 } /* Grammer:[ <angle> | <side-or-corner>,] <color-stop> [, <color-stop>]+ */
 
 /*  Grid */
-@mixin canvas-width($canvas-width: $canvas-width-default){
-	width: $canvas-width;
-}
-@mixin canvas-margin($canvas-margin: $canvas-margin-default){
-	margin: $canvas-margin;
-}
 
 @mixin box-sizing($box-sizing: border-box){
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-/*  Custom columns */
-
-@mixin enter-button-width($width){
-	width: $width;
-} 
-
-/*  Display Properties */	
-@mixin display($display: $display){
-	display: $display;
-}
-@mixin text-align($text-align: $text-align){
-	text-align: $text-align;
-}
-@mixin margin($margin: $margin){
-	margin: $margin;
-}
-@mixin padding($padding: $padding){
-	padding: $padding;
-}
-
-/*  Transitions */
-
-@mixin fade($opacity: $fade-opacity,$transition-time: $fade-transition-time){
-   opacity: $opacity;
-   -o-transition: $transition-time $transition-timing-function;
-   -moz-transition: $transition-time $transition-timing-function;
-   -webkit-transition: $transition-time $transition-timing-function;
-   transition: $transition-time $transition-timing-function;
-}
-
-@mixin fade-hover($opacity: $fade-hover-opacity){
-	&:hover {
-    	opacity: $opacity;
-	}
-}
-
-@mixin color-transition($color: $color-transition,$transition-time: $fade-transition-time){
-   color: $color;
-   -o-transition: $transition-time $transition-timing-function;
-   -moz-transition: $transition-time $transition-timing-function;
-   -webkit-transition: $transition-time $transition-timing-function;
-   transition: $transition-time $transition-timing-function;
-}
-
-@mixin color-hover($color: $fade-hover-color-default){
-	&:hover {
-    	color: $color;
-	}
 }
 
 /*  Indicators */
@@ -100,7 +45,7 @@
 
 /*  Helpers */
 
-@mixin border-radius($radius: $border-radius){
+@mixin border-radius($radius: 2){
 	-o-border-radius: $radius;
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;
@@ -145,18 +90,14 @@
 
 /*  Font Utility's */
 
-@mixin base-font-size($font-size: $base-font-size, $font-weight: $base-font-weight, $font-family: $base-font-family){
+@mixin base-font-size($font-size: 62.5%, $font-weight: normal, $font-family: $base-font-family){
 	font-size: $font-size;
 	font-weight: $font-weight;
 	font-family: $font-family;
 }
-@mixin font($font-weight: $font-weight-default,$font-family: $font-family-default){
+@mixin font($font-weight: inhert,$font-family: inhert){
 	font-weight: $font-weight;
 	font-family: $font-family;
-}
-
-@mixin fitText-font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue) + em;
 }
 
 @mixin font-size($sizeValue: 1.6) {
@@ -167,7 +108,7 @@
 @mixin font-size-important($sizeValue: 1.6) {
   font-size: ($sizeValue * 16) + px !important;
   font-size: $sizeValue + rem !important;
-} /* For override situation */
+} /* Override situation */
 
 
 /*  Text Shadow Styles  */

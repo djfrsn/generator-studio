@@ -24,5 +24,5 @@ sass: {
   grunt.registerTask('test', ['watch']);
   
   // the default task can be run just by typing "grunt" on the command line
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['watch']);
 };

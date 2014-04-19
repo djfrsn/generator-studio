@@ -1,0 +1,12 @@
+.DS_Store
+.sass-cache/
+.git/
+.zip
+Build/
+config.rb
+template.txt
+includes/
+.hammer-ignore
+docs/
+.takana-ignore
+/node-modules
