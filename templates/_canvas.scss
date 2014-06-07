@@ -1,7 +1,12 @@
-/* Canvas purpose is to add semantics to your stylesheets */
+
 
 /* Canvas
 */
+/* Canvas purpose 
+.Add semantics to your stylesheets
+.Remove the need to define element width in class names 
+*/
+
 @mixin canvas( $canvas-width: 100%, $canvas-height: 100%, $canvas-margin: 0 ) {
 	width: $canvas-width;
 	height: $canvas-height;
